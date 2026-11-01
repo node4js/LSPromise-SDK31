@@ -30,7 +30,7 @@ public class Shellcode extends BroadcastReceiver {
     private static final int NETWORK_STACK_UID = 1073;
     public static void onAppComponentFactoryLoaded() {
         int uid = Process.myUid();
-        String processName = Process.myProcessName();
+        String processName = Application.getProcessName();
         Log.e(TAG, "Shell code has been executed in " + uid + " process " + processName);
         if (uid == Process.SYSTEM_UID) {
             // In system_server

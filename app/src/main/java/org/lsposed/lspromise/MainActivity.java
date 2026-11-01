@@ -24,6 +24,7 @@ import android.view.View;
 import android.view.WindowInsets;
 import android.widget.Button;
 import android.widget.TextView;
+import androidx.core.content.ContextCompat;
 
 import java.io.File;
 import java.nio.file.Files;
@@ -159,7 +160,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 }
             }
         };
-        registerReceiver(receiver, new IntentFilter("EVIL"), Context.RECEIVER_EXPORTED);
+        ContextCompat.registerReceiver(this, receiver, new IntentFilter("EVIL"), ContextCompat.RECEIVER_EXPORTED);
         copyKsud();
     }
 

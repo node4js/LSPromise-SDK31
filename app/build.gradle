@@ -3,13 +3,18 @@ plugins {
 }
 
 android {
+
+    lint {
+        disable 'ExpiredTargetSdkVersion'
+    }
+    
     namespace 'org.lsposed.lspromise'
-    compileSdk 37
+    compileSdk 35
 
     defaultConfig {
         applicationId "org.lsposed.lspromise"
-        minSdk 37
-        targetSdk 37
+        minSdk 31
+        targetSdk 31
         versionCode 1
         versionName "1.0"
 
@@ -40,4 +45,5 @@ android {
 }
 
 dependencies {
+    implementation 'androidx.core:core:1.15.0'
 }
